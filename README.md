@@ -4,5 +4,3 @@ A Miiverse clone experience created by Trinity and using Miiverse World and Proj
 It's a Miiverse clone, except you can make posts outside of communities and a feed system is implemented showing you the latest posts from people you follow and communities you've favorited. It also includes helpful pages like a user/community discovery helper, new features like tagging and private communities and the most complex search system of any Miiverse clone. This is also the 2nd (1st being grape) open source PHP Miiverse clone to have messaging.
 ## Galaxy Plaza Features
 todo
-## Why did you make it open source?
-Simple! So you can help add features or fix those pesky bugs! If you want, you can download the Project ULTIMA source code and install it on your computer, and if you know PHP, you can add features mentioned in the todo list, or you can add your own features!
