@@ -18,14 +18,14 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     $values = [];
     if(file_exists($_FILES['icon']['tmp_name']) && is_uploaded_file($_FILES['icon']['tmp_name'])) {
-        $values['icon'] = uploadImage(file_get_contents($_FILES['icon']['tmp_name']), 128, 128);
+        $values['icon'] = uploadImage(file_get_contents($_FILES['icon']['tmp_name']), 256, 256);
         if($values['icon'] === null) {
             $error = 'An error occurred while uploading the icon.';
             goto showForm;
         }
     }
     if(file_exists($_FILES['banner']['tmp_name']) && is_uploaded_file($_FILES['banner']['tmp_name'])) {
-        $values['banner'] = uploadImage(file_get_contents($_FILES['banner']['tmp_name']), 400, 168);
+        $values['banner'] = uploadImage(file_get_contents($_FILES['banner']['tmp_name']), 800, 336);
         if($values['banner'] === null) {
             $error = 'An error occurred while uploading the banner.';
             goto showForm;
