@@ -19,8 +19,8 @@ const DB_NAME = 'galaxy_plaza'; // The name of the database. Required.
 
 // Local Image settings.
 const IMAGE_LOCAL = true;
-const IMAGE_LOCAL_BASE_DIR = "C://xampp//htdocs//galaxyplaza_offdevice//assets//img//image_posts//";
-const IMAGE_LOCAL_BASE_URL = "/assets/img/image_posts/";
+const IMAGE_LOCAL_BASE_DIR = "C://xampp//htdocs//galaxyplaza_offdevice//assets//img//";
+const IMAGE_LOCAL_BASE_URL = "/assets/img/";
 
 // Cloudinary settings.
 const USE_CLOUDINARY = false;
