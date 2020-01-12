@@ -602,7 +602,7 @@ function showNoContent($text)
     echo '<div class="no-content"><p>' . $text . '</p></div>';
 }
 
-function uploadImage($file, $width = null, $height = null)
+function uploadImage($file, $width = null, $height = null, $community_icon = false, $community_banner = false)
 {
     if($width !== null && $height !== null && extension_loaded('imagick'))
 	{
