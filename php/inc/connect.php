@@ -297,19 +297,16 @@ function getIP()
 }
 
 // Gets Site Theme
-// WARNING CURRENTLY BROKEN!
 function getTheme($theme)
 {
 	if ($theme == 0)
 	{
 		print '<link rel="stylesheet" type="text/css" href="/assets/css/offdevice.css">';
-		print '<link rel="stylesheet" type="text/css" href="/assets/css/nprogress.css">';
 	}
 	else if ($theme == 1)
 	{
 		print '<link rel="stylesheet" type="text/css" href="/assets/css/offdevice.css">';
 		print '<link rel="stylesheet" type="text/css" href="/assets/css/offdevice-dark.css">';
-		print '<link rel="stylesheet" type="text/css" href="/assets/css/nprogress.css">';
 	}
 }
 
