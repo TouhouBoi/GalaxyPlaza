@@ -9,12 +9,14 @@
  * Released under the MIT license
  * http://jquery.org/license
  *
- * Date: 2013-2-4
+ * Galaxy Plaza - complete-en.js
  */
 
 /*! jQuery v1.9.1 | (c) 2005, 2012 jQuery Foundation, Inc. | jquery.org/license
-//@ sourceMappingURL=jquery.min.map
+//# sourceMappingURL=jquery.min.map
 */
+
+/* Start of JQuery */
 (function (e, t) {
     var n, r, i = typeof t,
         o = e.document,
@@ -3377,22 +3379,9 @@
         return b
     })
 })(window);
-// Google Analytics のトラッキングコード
-var ga_tracking_id = $(document.documentElement).attr('data-google-analytics-tracking-id');
-(function (i, s, o, g, r, a, m) {
-    i['GoogleAnalyticsObject'] = r;
-    i[r] = i[r] || function () {
-        (i[r].q = i[r].q || []).push(arguments)
-    }, i[r].l = 1 * new Date();
-    a = s.createElement(o),
-        m = s.getElementsByTagName(o)[0];
-    a.async = 1;
-    a.src = g;
-    m.parentNode.insertBefore(a, m)
-})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-ga('create', ga_tracking_id, 'auto');
-ga('set', 'anonymizeIp', true);
+/* End of JQuery */
 
+/* Start of complete-en */
 var Olv = Olv || {};
 (function (t, e) {
     e.init || (e.init = t.Deferred(function () {
@@ -4935,120 +4924,11 @@ var Olv = Olv || {};
         e.User.setupUserSidebar(o)
     }), e.router.connect("^/communities/[0-9]+", function (t, n, o) {
         e.Community.setupCommunitySidebar(o), e.SocialButton.setup(o)
-    }), e.init.done(function () {
-        e.CookiePolicyNotice.setup()
-    }), e.GoogleAnalytics = {}, e.GoogleAnalytics.setCommonVars = function (e) {
-        var n = t(document.body),
-            o = n.attr("data-hashed-pid"),
-            a = t(".body-content").attr("data-region") || n.attr("data-user-region") || "";
-        if (e) {
-            var i = e.pathname.match(new RegExp("^/titles/([0-9]+)/([0-9]+)")),
-                r = i ? i[1] : "",
-                s = i ? i[2] : "";
-            ga("set", "dimension16", s), ga("set", "dimension17", r)
-        }
-        if (ga("set", "dimension7", a), ga("set", "dimension13", "PC"), o) {
-            var l = n.attr("data-country") || "",
-                c = n.attr("data-lang") || "",
-                u = n.attr("data-user-region") || "",
-                d = n.attr("data-age") || "",
-                f = n.attr("data-gender") || "",
-                p = n.attr("data-game-skill");
-            p = "1" === p ? "beginner" : "2" === p ? "intermediate" : "3" === p ? "advanced" : "";
-            var m = n.attr("data-follow-done");
-            m = "1" === m ? "yes" : "0" === m ? "no" : "";
-            var g = n.attr("data-post-done");
-            g = "1" === g ? "yes" : "0" === g ? "no" : "", ga("set", "userId", o), ga("set", "dimension1", l), ga("set", "dimension2", c), ga("set", "dimension3", u), ga("set", "dimension4", d), ga("set", "dimension5", f), ga("set", "dimension6", p), ga("set", "dimension8", m), ga("set", "dimension9", g)
-        }
-    }, e.GoogleAnalytics.refleshLocation = function (t) {
-        ga("set", "location", t.href)
-    }, e.GoogleAnalytics.trackPageView = function (t) {
-        e.GoogleAnalytics.refleshLocation(t), e.GoogleAnalytics.setCommonVars(t), ga("send", "pageview")
-    }, e.GoogleAnalytics.trackError = function (t) {
-        e.GoogleAnalytics.setCommonVars(), ga("send", "exception", {
-            exDescription: t
-        })
-    }, e.GoogleAnalytics.createEventVars = function (t) {
-        return {
-            dimension10: t.attr("data-community-id") || "",
-            dimension11: t.attr("data-title-id") || "",
-            dimension12: t.attr("data-url-id") || "",
-            dimension14: t.attr("data-post-with-screenshot") || "",
-            dimension15: t.attr("data-post-content-type") || ""
-        }
-    }, e.GoogleAnalytics.trackEvent = function (t, e, n, o) {
-        ga("send", "event", t, e, n, o)
-    }, e.router.connect(/^/, function (n, o, a) {
-        var i = t(".track-error");
-        i.length > 0 ? e.GoogleAnalytics.trackError(i.attr("data-track-error")) : e.GoogleAnalytics.trackPageView(o)
-    }), t(document).on("olv:ajax:error", function (t, n, o, a) {
-        a.status && e.GoogleAnalytics.trackError(n.error_code)
-    }), window.onerror = function (t, n, o) {
-        var a = n + ":" + o + " - " + t;
-        e.GoogleAnalytics.trackError(a)
-    }, e.init.done(function (t) {
-        t(document).on("click", "[data-track-action]", function (n) {
-            var o = t(this);
-            if (!e.Form.isDisabled(o) || void 0 !== o.attr("data-modal-open")) {
-                var a = o.attr("data-track-category"),
-                    i = o.attr("data-track-action"),
-                    r = o.attr("data-track-label"),
-                    s = e.GoogleAnalytics.createEventVars(o);
-                e.GoogleAnalytics.trackEvent(a, i, r, s)
-            }
-        }), t(document).on("olv:modal:report-violation olv:modal:report-violator", function (t, e, n) {
-            function o() {
-                var t = r.find("option:selected").attr("data-track-action");
-                a.attr("data-track-action", t)
-            }
-            var a = e.element.find(".post-button"),
-                i = e.triggerElement.attr("data-can-report-spoiler"),
-                r = "1" === i ? e.element.find("select.can-report-spoiler") : "0" === i ? e.element.find("select.cannot-report-spoiler") : e.element.find('select[name="type"]'),
-                s = e.triggerElement.attr("data-track-label"),
-                l = e.triggerElement.attr("data-url-id") || "";
-            a.attr("data-track-label", s), a.attr("data-url-id", l), r.on("change", o), n.done(function () {
-                r.off("change", o)
-            })
-        }), t(document).on("olv:community:favorite:toggle", function (e, n) {
-            t(e.target).attr("data-track-action", n ? "cancelFavorite" : "favorite")
-        }), t(document).on("olv:entry:empathy:toggle", function (e, n) {
-            t(e.target).attr("data-track-action", n ? "cancelYeah" : "yeah")
-        });
-        var n = function (t) {
-            var e = t.find("input[type=submit]"),
-                n = t.find('input[name="album_image_id"]').length && t.find('input[name="album_image_id"]').val().length > 0,
-                o = t.find('input[name="screenshot"]').length && t.find('input[name="screenshot"]').val().length > 0;
-            e.attr("data-post-with-screenshot", n || o ? "screenshot" : "nodata")
-        };
-        t(document).on("olv:entryform:updatescreenshot", function (e) {
-            var o = t(e.target);
-            n(o)
-        }), t(document).on("olv:entryform:fileselect", function (e, n) {
-            var o = t(e.target),
-                a = t(n).find('input[type="submit"]');
-            "screenshot" === o.attr("name") ? a.attr("data-post-with-screenshot", "screenshot") : "painting" === o.attr("name") && a.attr("data-post-content-type", "draw")
-        }), t(document).on("olv:entryform:reset", function (e) {
-            var o = t(e.target);
-            o.find("input[type=submit]").attr("data-post-content-type", "text"), setTimeout(function () {
-                n(o)
-            }, 0)
-        }), t(document).on("olv:modal:unfollow", function (t, e, n) {
-            var o = e.element.find(".ok-button");
-            o.attr("data-track-category", "follow"), o.attr("data-track-action", "unfollow"), o.attr("data-track-label", "user")
-        }), t(document).on("olv:entry:profile-post:set", function (t) {
-            e.GoogleAnalytics.trackEvent("profilePost", "setProfilePost")
-        }), t(document).on("olv:entry:profile-post:remove", function (t) {
-            e.GoogleAnalytics.trackEvent("profilePost", "unsetProfilePost")
-        }), t(document).on("olv:entry:post:delete", function (n, o) {
-            var a = t(o.option),
-                i = a.attr("data-track-category"),
-                r = a.attr("data-track-action"),
-                s = a.attr("data-track-label"),
-                l = e.GoogleAnalytics.createEventVars(a);
-            e.GoogleAnalytics.trackEvent(i, r, s, l)
-        })
     }))
 }).call(this, jQuery, Olv);
+/* End of complete-en */
+
+// Locale Data
 Olv.Locale.Data = {
     "olv.portal.age_gate.select_label": {
         "value": "Please enter your date of birth."
