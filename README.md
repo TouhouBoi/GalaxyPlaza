@@ -8,4 +8,4 @@ Recommended Users and Communities.<br/>
 Local Image Hosting Support.<br/>
 Automatic User Status Update.<br/>
 Administrator Tools.<br/>
-Deobfuscated complete-en.js.
+Deobfuscated complete.js.
