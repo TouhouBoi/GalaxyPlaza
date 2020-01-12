@@ -9,6 +9,7 @@ const GP_VERSION_POST_FIX = "pre-alpha";
 // External Urls
 const MII_CDN_URL = "https://mii-secure.cdn.nintendo.net/";
 const GRAVATAR_URL = "https://gravatar.com/avatar/";
+const CLOUDINARY_API_URL = "https://api.cloudinary.com/v1_1/";
 
 // Default Urls
 const TITLE_DEFAULT_URL = "/assets/img/title-icon-default.png";
@@ -706,7 +707,7 @@ function uploadImage($file, $width = null, $height = null, $community_icon = fal
 		else
 		{
 			$mime = finfo_buffer(finfo_open(), $file, FILEINFO_MIME_TYPE);
-			$ch = curl_init('https://api.cloudinary.com/v1_1/' . urlencode(CLOUDINARY_CLOUDNAME) . '/image/upload');
+			$ch = curl_init(CLOUDINARY_API_URL . urlencode(CLOUDINARY_CLOUDNAME) . '/image/upload');
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 			curl_setopt($ch, CURLOPT_POST, true);
 			curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query(['upload_preset' => CLOUDINARY_UPLOADPRESET, 'file' => 'data:' . $mime . ';base64,' . base64_encode($file)]));
