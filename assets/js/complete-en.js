@@ -5270,7 +5270,7 @@ Olv.Locale.Data = {
     },
     "olv.portal.report.report_violation_comment [_1]": {
         "args": [],
-        "value": "Report Violation to Miiverse Administrators"
+        "value": "Report Violation to Galaxy Plaza Administrators"
     },
     "olv.portal.report.report_violation_message": {
         "args": [],
