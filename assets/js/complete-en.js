@@ -5238,7 +5238,7 @@ Olv.Locale.Data = {
     },
     "olv.portal.report.report_spoiler_comment": {
         "args": [],
-        "value": "Report Spoilers to Miiverse Administrators"
+        "value": "Report Spoilers to Galaxy Plaza Administrators"
     },
     "olv.portal.report.report_spoiler_comment %1": {
         "args": [],
