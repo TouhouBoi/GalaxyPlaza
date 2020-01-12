@@ -6,4 +6,4 @@ It's a Miiverse clone, except you can make posts outside of communities and a fe
 Messaging.<br/>
 Recommended Users and Communities.<br/>
 Local Image Hosting Support.<br/>
-Auto User Status Update. 
+Automatic User Status Update. 
