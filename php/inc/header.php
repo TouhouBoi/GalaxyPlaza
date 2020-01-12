@@ -29,7 +29,9 @@ require_once('connect.php');
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="#9900ff">
 		<meta name="mobile-web-app-capable" content="yes">
-		<script src="/assets/js/complete-en.js"></script>
+		<script src="/assets/js/jquery.js"></script>
+		<script src="/assets/js/complete.js"></script>
+		<script src="/assets/js/locale/en.js"></script>
 		<?php
 		if (isset($_SESSION['username']) && isset($_SESSION['id']))
 		{
