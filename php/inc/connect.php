@@ -609,7 +609,7 @@ function uploadImage($file, $width = null, $height = null, $community_icon = fal
         $imagick = new Imagick();
         $imagick->readImageBlob($file);
 		
-        if($imagick->getImageFormat() === 'GIF')
+        if ($imagick->getImageFormat() === 'GIF')
 		{
             $imagick = $imagick->coalesceImages();
             $imagick->cropThumbnailImage($width, $height);
@@ -629,27 +629,72 @@ function uploadImage($file, $width = null, $height = null, $community_icon = fal
         $file = $imagick->getImagesBlob();
     }
 	
-    if(IMAGE_LOCAL == true)
+    if (IMAGE_LOCAL == true)
 	{
 		global $randomlib;
 		
-		$file_id = $randomlib->gen_random_id();
-		$filename = $file_id.".png";
-		$image_file = IMAGE_LOCAL_BASE_DIR.$filename;
-		
-		$file_open = fopen($image_file, "w");
-		
-		$status = fwrite($file_open, $file);
-		fclose($file_open);
-		
-		if ($status)
+		if ($community_icon == true)
 		{
-			$image_url = IMAGE_LOCAL_BASE_URL.$filename;
-			return($image_url);
+			$file_id = $randomlib->gen_random_id();
+			$filename = $file_id.".png";
+			$image_file = IMAGE_LOCAL_BASE_DIR."//icon//".$filename;
+		
+			$file_open = fopen($image_file, "w");
+		
+			$status = fwrite($file_open, $file);
+			fclose($file_open);
+		
+			if ($status)
+			{
+				$image_url = IMAGE_LOCAL_BASE_URL."/icon/".$filename;
+				return($image_url);
+			}
+			else
+			{
+				return null;
+			}
+		}
+		else if ($community_banner == true)
+		{
+			$file_id = $randomlib->gen_random_id();
+			$filename = $file_id.".png";
+			$image_file = IMAGE_LOCAL_BASE_DIR."//banner//".$filename;
+		
+			$file_open = fopen($image_file, "w");
+		
+			$status = fwrite($file_open, $file);
+			fclose($file_open);
+		
+			if ($status)
+			{
+				$image_url = IMAGE_LOCAL_BASE_URL."/banner/".$filename;
+				return($image_url);
+			}
+			else
+			{
+				return null;
+			}
 		}
 		else
 		{
-			return null;
+			$file_id = $randomlib->gen_random_id();
+			$filename = $file_id.".png";
+			$image_file = IMAGE_LOCAL_BASE_DIR.$filename;
+		
+			$file_open = fopen($image_file, "w");
+		
+			$status = fwrite($file_open, $file);
+			fclose($file_open);
+		
+			if ($status)
+			{
+				$image_url = IMAGE_LOCAL_BASE_URL.$filename;
+				return($image_url);
+			}
+			else
+			{
+				return null;
+			}
 		}
     }
 	else if (USE_CLOUDINARY == true)
