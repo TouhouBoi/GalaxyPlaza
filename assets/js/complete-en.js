@@ -5278,7 +5278,7 @@ Olv.Locale.Data = {
     },
     "olv.portal.report.report_violation_message %1": {
         "args": [],
-        "value": "Report Violation to Miiverse Administrators"
+        "value": "Report Violation to Galaxy Plaza Administrators"
     },
     "olv.portal.report.report_violation_message [_1]": {
         "args": [],
