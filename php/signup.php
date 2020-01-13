@@ -289,7 +289,7 @@ require_once('inc/header.php');
         <?php } ?><div class="form-buttons">
             <button class="black-button" type="submit">Sign Up</button>
         </div><br>
-        <p>Email addresses are optional and can be changed later, but without one you can't add an Gravatar or reset your password if you get locked out of your account.</p><br>
+        <p>Email address and Nintendo Network ID are optional and can be changed later, but without one you can't add an Gravatar or reset your password if you get locked out of your account.</p><br>
         <p>If you already have an account, you can <a href="/login">sign in here.</a></p><br>
     </form>
 </div><?php
