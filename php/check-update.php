@@ -5,7 +5,7 @@ header('Content-Type: application/json');
 
 if ($_SERVER['REQUEST_METHOD'] == "POST")
 {
-	if(HTTPS_PROXY)
+	if (HTTPS_PROXY)
 	{
 		$ip = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR'])[0];
 	}
@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST")
 		$ip = $_SERVER['REMOTE_ADDR'];
 	}
 
-	if(!empty($_SESSION['username']))
+	if (!empty($_SESSION['username']))
 	{
 		$stmt = $db->prepare('UPDATE users SET last_seen = NOW(), ip = ? WHERE id = ?');
 		$stmt->bind_param('si', $ip, $_SESSION['id']);
@@ -41,8 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST")
 }
 else
 {
-
-	if(empty($_SESSION['username']))
+	if (empty($_SESSION['username']))
 	{
 		http_response_code(401);
 	
