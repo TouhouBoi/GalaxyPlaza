@@ -39,6 +39,12 @@ require_once('connect.php');
 		}
 		?>
 		<?php
+		if (isset($header_is_login) && $header_is_login == true)
+		{
+			print '<link rel="stylesheet" type="text/css" href="/assets/css/login.css">';
+		}
+		?>
+		<?php
 		if (isset($_SESSION['username']) && isset($_SESSION['id']))
 		{
 			global $db;
