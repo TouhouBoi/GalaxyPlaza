@@ -27,6 +27,17 @@ if ($_SERVER['REQUEST_METHOD'] == "POST")
 			)
 		);
 	}
+	else
+	{
+		print(
+			json_encode(
+				[
+					'success' => 0,
+					'errors' => ['You must be signed in to access this page.']
+				]
+			)
+		);
+	}
 }
 else
 {
