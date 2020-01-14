@@ -686,7 +686,7 @@ function uploadImage($file, $width = null, $height = null, $community_icon = fal
 		
 			if ($status)
 			{
-				$image_url = IMAGE_LOCAL_BASE_URL.$filename;
+				$image_url = IMAGE_LOCAL_BASE_URL."/image_posts/".$filename;
 				return($image_url);
 			}
 			else
