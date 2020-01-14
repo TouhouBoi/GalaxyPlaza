@@ -117,13 +117,13 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </li>
                     <li>
                         <label class="file-button-container">
-                            <span class="input-label">Icon <span>A square image with a 128x128 size is recommended.</span></span>
+                            <span class="input-label">Icon <span>A square image with a 128x128 or 256x256 size is recommended.</span></span>
                             <input accept="image/*" type="file" name="icon" class="file-button">
                         </label>
                     </li>
                     <li>
                         <label class="file-button-container">
-                            <span class="input-label">Banner <span>An image with a 400x168 size is recommended.</span></span>
+                            <span class="input-label">Banner <span>An image with a 400x168 or 800x336 size is recommended.</span></span>
                             <input accept="image/*" type="file" name="banner" class="file-button">
                         </label>
                     </li>
