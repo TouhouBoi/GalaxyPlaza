@@ -74,7 +74,7 @@
                                 $messagable = true;
                             }
                         }
-                        if($messagable) { ?>
+                        if ($messagable or $_SESSION['level'] > 1) { ?>
                             <a href="/messages/<?=$row['username']?>" class="report-button">Message</a>
                         <?php } ?>
 						<?php if ($_SESSION['level'] > 1) { ?>
