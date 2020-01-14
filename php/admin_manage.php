@@ -40,6 +40,7 @@ if ($_SESSION['level'] > 1)
                                     <?php if($_SESSION['level'] > 1) { ?><input type="submit" class="post-button black-button sidebar-social-container" value="<?=$banned ? 'Unb' : 'B'?>an" data-modal-open="#manage-ban-page"><?php } ?>
                                     <input type="submit" class="post-button black-button sidebar-social-container" value="Purge" data-modal-open="#manage-purge-page">
                                     <input type="submit" class="post-button black-button sidebar-social-container" value="Delete" data-modal-open="#manage-delete-page">
+									<input type="button" onclick="window.location.href='/communities/create';" class="black-button sidebar-social-container" value="Create Community">
 									<?php if ($_SESSION['level'] > 1) {
 										print '<input type="button" onclick="window.location.href=\'/admin/server_status/'.$username.'\';" style="width: 150px;" class="black-button sidebar-social-container" value="Server Information">';
 									}
