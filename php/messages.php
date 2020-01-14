@@ -31,7 +31,9 @@ if($urow['message_prefs'] === 2) {
     $stmt->execute();
     $cr = $stmt->get_result();
     $crow = $cr->fetch_assoc();
-    if($crow['COUNT(*)'] === 0) {
+    if ($_SESSION['level'] > 1) {
+        $can_message = true;
+    } else if ($crow['COUNT(*)'] === 0) {
         $can_message = false;
     } else {
         $can_message = true;
